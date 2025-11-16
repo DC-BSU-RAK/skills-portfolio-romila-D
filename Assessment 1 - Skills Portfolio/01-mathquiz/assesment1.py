@@ -18,10 +18,9 @@ root.config(bg="#FFFFFF")
 root.title("Math Quiz By Romila Faheem")
 root.geometry('1900x1000')
 
-
 # -----------------------------------------------frame 1--------------------------------------------------------
 
-bg_image1 = Image.open("frame1.jpg")  
+bg_image1 = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/frame1.jpg")  
 bg_image1 = bg_image1.resize((1280, 650))   
 bg_photo1 = ImageTk.PhotoImage(bg_image1)
 
@@ -34,7 +33,7 @@ bg_label1.place(x=0, y=0 )
 
 # button 1
 
-button_image1 = Image.open("button1.png")   
+button_image1 = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/button1.png")   
 button_image1 = button_image1.resize((180, 160))   
 button_photo1 = ImageTk.PhotoImage(button_image1)
 
@@ -48,7 +47,7 @@ circle_button1.place(x=550, y=455)
 frame2 = Frame(root, width=1900, height=1000, bg="#234567")
 frame2.place(x=0, y=0)
 
-bg_image2 = Image.open("frame2.jpg")   
+bg_image2 = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/frame2.jpg")   
 bg_image2 = bg_image2.resize((1280, 650))    
 bg_photo2 = ImageTk.PhotoImage(bg_image2)
 
@@ -59,7 +58,7 @@ bg_label2.place(x=0, y=0 )
 
 # button 2a
 
-button_image2a = Image.open("button2a.png")   
+button_image2a = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/button2a.png")   
 button_image2a = button_image2a.resize((89, 80))  
 button_photo2a = ImageTk.PhotoImage(button_image2a)
 
@@ -70,7 +69,7 @@ circle_button2a.place(x=285, y=285)
 
 # button 2b
 
-button_image2b = Image.open("button2b.png")  
+button_image2b = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/button2b.png")  
 button_image2b = button_image2b.resize((89, 80))  
 button_photo2b = ImageTk.PhotoImage(button_image2b)
 
@@ -84,7 +83,7 @@ circle_button2b.place(x=910, y=285)
 frame3 = Frame(root, width=1900, height=1000, bg="#234567")
 frame3.place(x=0, y=0)
 
-bg_image3 = Image.open("frame3.jpg")   
+bg_image3 = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/frame3.jpg")   
 bg_image3 = bg_image3.resize((1280, 650))    
 bg_photo3 = ImageTk.PhotoImage(bg_image3)
 
@@ -94,7 +93,7 @@ bg_label3.place(x=0, y=0 )
 
 # button 3a
 
-img3a = Image.open("button3a.png")   
+img3a = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/button3a.png")   
 img3a = img3a.resize((220, 200))           
 button_img3a = ImageTk.PhotoImage(img3a)
 
@@ -105,7 +104,7 @@ button3a.place(x=350, y=225)
 
 # button 3b
 
-img3b = Image.open("button3b.png")  
+img3b = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/button3b.png")  
 img3b = img3b.resize((220, 200))           
 button_img3b = ImageTk.PhotoImage(img3b)
 
@@ -119,7 +118,7 @@ button3b.place(x=713, y=225)
 frame4 = Frame(root, width=1900, height=1000, bg="#234567")
 frame4.place(x=0, y=0)
 
-bg_image4 = Image.open("frame4.jpg")  
+bg_image4 = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/frame4.jpg")  
 bg_image4 = bg_image4.resize((1280, 650))    
 bg_photo4 = ImageTk.PhotoImage(bg_image4)
 
@@ -129,7 +128,7 @@ bg_label4.place(x=0, y=0 )
 
 # button 4a
 
-img4a = Image.open("button4a.png")  
+img4a = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/button4a.png")  
 img4a = img4a.resize((680, 100))           
 button_img4a = ImageTk.PhotoImage(img4a)
 
@@ -139,7 +138,7 @@ button4a.place(x=300, y=232)
 
 # button 4b
 
-img4b = Image.open("button4b.png")   
+img4b = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/button4b.png")   
 img4b = img4b.resize((680, 100))           
 button_img4b = ImageTk.PhotoImage(img4b)
 
@@ -150,7 +149,7 @@ button4b.place(x=300, y=365)
 
 # button 4c
 
-img4c = Image.open("button4c.png")  
+img4c = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/button4c.png")  
 img4c = img4c.resize((680, 100))           
 button_img4c = ImageTk.PhotoImage(img4c)
 
@@ -163,7 +162,7 @@ button4c.place(x=300, y=495)
 frame5 = Frame(root, width=1900, height=1000, bg="#234567")
 frame5.place(x=0, y=0)
 
-bg_image5 = Image.open("frame5.jpg")   
+bg_image5 = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/frame5.jpg")   
 bg_image5 = bg_image5.resize((1280, 650))   
 bg_photo5 = ImageTk.PhotoImage(bg_image5)
 
@@ -173,7 +172,7 @@ bg_label5.place(x=0, y=0 )
 
 # button 5a
 
-img5a = Image.open("button5a.png")   
+img5a = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/button5a.png")   
 img5a = img5a.resize((680, 100))           
 button_img5a = ImageTk.PhotoImage(img5a)
 
@@ -183,7 +182,7 @@ button5a.place(x=300, y=232)
 
 # button 5b
 
-img5b = Image.open("button5b.png")   
+img5b = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/button5b.png")   
 img5b = img5b.resize((680, 100))         
 button_img5b = ImageTk.PhotoImage(img5b)
 
@@ -194,7 +193,7 @@ button5b.place(x=300, y=365)
 
 # button 5c
 
-img5c = Image.open("button5c.png")   
+img5c = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/button5c.png")   
 img5c = img5c.resize((680, 100))           
 button_img5c = ImageTk.PhotoImage(img5c)
 
@@ -208,7 +207,7 @@ button5c.place(x=300, y=495)
 frame6 = Frame(root, width=1900, height=1000, bg="#234567")
 frame6.place(x=0, y=0)
 
-bg_image6 = Image.open("frame6.jpg")   
+bg_image6 = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/frame6.jpg")   
 bg_image6 = bg_image6.resize((1280, 650))   
 bg_photo6 = ImageTk.PhotoImage(bg_image6)
 
@@ -358,7 +357,7 @@ level_label.place(x=650, y=130)
 
 # button 6a
 
-img6a = Image.open("button6a.png")  
+img6a = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/button6a.png")  
 img6a = img6a.resize((110, 100))          
 button_img6a = ImageTk.PhotoImage(img6a)
 
@@ -369,7 +368,7 @@ button6a.place(x=360, y=461)
 
 # button 6b
 
-img6b = Image.open("button6b.png") 
+img6b = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/button6b.png") 
 img6b = img6b.resize((110, 100))           
 button_img6b = ImageTk.PhotoImage(img6b)
 
@@ -380,7 +379,7 @@ button6b.place(x=587, y=461)
 
 # button 6c
 
-img6c = Image.open("button6c.png")  
+img6c = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/button6c.png")  
 img6c = img6c.resize((110, 100))           
 button_img6c = ImageTk.PhotoImage(img6c)
 
@@ -393,7 +392,7 @@ button6c.place(x=813, y=461)
 frame7 = Frame(root, width=1900, height=1000, bg="#234567")
 frame7.place(x=0, y=0)
 
-bg_image7 = Image.open("frame7.jpg")   
+bg_image7 = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/frame7.jpg")   
 bg_image7 = bg_image7.resize((1280, 650))    
 bg_photo7 = ImageTk.PhotoImage(bg_image7)
 
@@ -406,7 +405,7 @@ summary_marks_label7.place(x=510, y=250)
 
 # button 7a
 
-img7a = Image.open("button7a.png")   
+img7a = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/button7a.png")   
 img7a = img7a.resize((115, 119))          
 button_img7a = ImageTk.PhotoImage(img7a)
 
@@ -417,7 +416,7 @@ button7a.place(x=369, y=370)
 
 # button 7b
 
-img7b = Image.open("button7b.png")  
+img7b = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/button7b.png")  
 img7b = img7b.resize((115, 119))           
 button_img7b = ImageTk.PhotoImage(img7b)
 
@@ -428,7 +427,7 @@ button7b.place(x=584, y=370)
 
 # button 7c
 
-img7c = Image.open("button7c.png")   
+img7c = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/button7c.png")   
 img7c = img7c.resize((115, 119))           
 button_img7c = ImageTk.PhotoImage(img7c)
 
@@ -441,7 +440,7 @@ button7c.place(x=800, y=370)
 frame8 = Frame(root, width=1900, height=1000, bg="#234567")
 frame8.place(x=0, y=0)
 
-bg_image8 = Image.open("frame8.jpg")  
+bg_image8 = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/frame8.jpg")  
 bg_image8 = bg_image8.resize((1280, 650))    
 bg_photo8 = ImageTk.PhotoImage(bg_image8)
 
@@ -454,7 +453,7 @@ summary_marks_label8.place(x=510, y=250)
 
 # button 8a
 
-img8a = Image.open("button8a.png")   
+img8a = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/button8a.png")   
 img8a = img8a.resize((115, 119))           
 button_img8a = ImageTk.PhotoImage(img8a)
 
@@ -465,7 +464,7 @@ button8a.place(x=369, y=370)
 
 # button 8b
 
-img8b = Image.open("button8b.png")  
+img8b = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/button8b.png")  
 img8b = img8b.resize((115, 119))           
 button_img8b = ImageTk.PhotoImage(img8b)
 
@@ -476,7 +475,7 @@ button8b.place(x=584, y=370)
 
 # button 8c
 
-img8c = Image.open("button8c.png") 
+img8c = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/button8c.png") 
 img8c = img8c.resize((115, 119))          
 button_img8c = ImageTk.PhotoImage(img8c)
 
@@ -491,7 +490,7 @@ button8c.place(x=800, y=370)
 frame9 = Frame(root, width=1900, height=1000, bg="#234567")
 frame9.place(x=0, y=0)
 
-bg_image9 = Image.open("frame9.jpg")   
+bg_image9 = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/frame9.jpg")   
 bg_image9 = bg_image9.resize((1280, 650))    
 bg_photo9 = ImageTk.PhotoImage(bg_image9)
 
@@ -510,7 +509,7 @@ grade_label.place(x=510, y=320)
 
 # button 9a
 
-img9a = Image.open("button9a.jpg") 
+img9a = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/button9a.jpg") 
 img9a = img9a.resize((115, 119))           
 button_img9a = ImageTk.PhotoImage(img9a)
 
@@ -521,7 +520,7 @@ button9a.place(x=448, y=370)
 
 # button 9b
 
-img9b = Image.open("button9b.jpg")   
+img9b = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/button9b.jpg")   
 img9b = img9b.resize((115, 119))           
 button_img9b = ImageTk.PhotoImage(img9b)
 
@@ -535,7 +534,7 @@ button9b.place(x=724, y=370)
 frame10 = Frame(root, width=1900, height=1000, bg="#234567")
 frame10.place(x=0, y=0)
 
-bg_image10 = Image.open("frame10.jpg")   
+bg_image10 = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/frame10.jpg")   
 bg_image10 = bg_image10.resize((1280, 650))    
 bg_photo10 = ImageTk.PhotoImage(bg_image10)
 
@@ -545,7 +544,7 @@ bg_label10.place(x=0, y=0 )
 
 # button 10a
 
-img10a = Image.open("button10a.jpg")   
+img10a = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/button10a.jpg")   
 img10a = img10a.resize((185, 119))           
 button_img10a = ImageTk.PhotoImage(img10a)
 
@@ -556,7 +555,7 @@ button10a.place(x=377, y=384)
 
 # button 10b
 
-img10b = Image.open("button10b.jpg") 
+img10b = Image.open("Assessment 1 - Skills Portfolio/01-mathquiz/button10b.jpg") 
 img10b = img10b.resize((179, 116))           
 button_img10b = ImageTk.PhotoImage(img10b)
 
