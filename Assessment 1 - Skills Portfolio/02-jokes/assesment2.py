@@ -5,6 +5,7 @@ from PIL import ImageTk, Image
 import random
 import pygame
 
+#
 
 with open("Assessment 1 - Skills Portfolio/02-jokes/randomjokes.txt", "r", encoding="utf-8") as f:
     jokes = [line.strip() for line in f.readlines() if "?" in line]
