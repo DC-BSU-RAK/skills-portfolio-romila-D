@@ -23,12 +23,12 @@ def switch_to_frame(frame):
 
 # To block user to edit in text box
 
-def enable_edit():
+def allow_edit():
     text_box.config(state=NORMAL)
 
 # Read data from file 
 
-def read_student_data():
+def read_sd():
     students = []
     with open(file_path, "r") as file:
         lines = file.readlines()
@@ -62,8 +62,8 @@ def read_student_data():
 
 # Show all students
 
-def show_all_students():
-    students = read_student_data()
+def display_all_sd():
+    students = read_sd()
     text_box.config(state=NORMAL)
     text_box.delete("1.0", END)
     for s in students:
@@ -74,8 +74,8 @@ def show_all_students():
 
 # Show high grade
 
-def show_highest_student():
-    students = read_student_data()
+def display_highest_sd():
+    students = read_sd()
     if not students:
         return
     max_score = max(s['total'] for s in students)
@@ -90,8 +90,8 @@ def show_highest_student():
 
 # Show low grade 
 
-def show_lowest_student():
-    students = read_student_data()
+def display_lowest_sd():
+    students = read_sd()
     if not students:
         return
     min_score = min(s['total'] for s in students)
@@ -105,8 +105,9 @@ def show_lowest_student():
     switch_to_frame(frame3)
 
 # Search student by name
-def search_student_by_name():
-    students = read_student_data()
+
+def search_for_sd_by_name():
+    students = read_sd()
     name_to_search = search_entry.get().strip().lower()
     results = [s for s in students if s['name'].lower() == name_to_search]
     text_box.config(state=NORMAL)
@@ -120,8 +121,9 @@ def search_student_by_name():
     text_box.config(state=DISABLED)
     switch_to_frame(frame3)
 
+# Search start
 
-def prepare_search():
+def ready_search():
     search_entry.lift() 
     search_entry.delete(0, END)
     text_box.config(state=NORMAL)
@@ -129,14 +131,14 @@ def prepare_search():
     text_box.config(state=DISABLED)
     switch_to_frame(frame3)
 
-
-def hide_search_entry():
+def hide_search():
     search_entry.lower()  
 
+# Arrange student detail from grade
 
-def sort_students_by_percentage():
+def arrange_sd_by_percentage():
     global sort_descending
-    students = read_student_data()
+    students = read_sd()
     students.sort(key=lambda s: s['percent'], reverse=sort_descending)
     text_box.config(state=NORMAL)
     text_box.delete("1.0", END)
@@ -148,8 +150,9 @@ def sort_students_by_percentage():
     
     sort_descending = not sort_descending  
 
+# Allow the user to add student detail
 
-def enable_add_in_textbox():
+def allow_add():
     global current_mode
     current_mode = "add"
 
@@ -169,12 +172,13 @@ def enable_add_in_textbox():
     text_box.config(state=NORMAL)
     switch_to_frame(frame3)
 
+# Allow the user to delet student detail
 
-def enable_delete_mode():
+def allow_delete():
     global current_mode
     current_mode = "delete"
 
-    students = read_student_data()
+    students = read_sd()
     text_box.config(state=NORMAL)
     text_box.delete("1.0", END)
 
@@ -196,8 +200,9 @@ def enable_delete_mode():
     text_box.config(state=NORMAL)
     switch_to_frame(frame3)
 
+# To save the new added student 
 
-def save_new_student():
+def update_new_sd():
     content = text_box.get("1.0", END).strip().split("\n")
     try:
         code = content[0].split(":")[1].strip()
@@ -218,13 +223,14 @@ def save_new_student():
             file.write(f"{code},{name},{','.join(map(str, marks_list))},{exam}\n")
 
         messagebox.showinfo("Saved", "New student added successfully!")
-        show_all_students()
+        display_all_sd()
 
     except Exception as e:
         messagebox.showerror("Error", f"Failed to save data.\n{e}")
 
+# To save the deleted data
 
-def save_after_delete():
+def update_after_delete():
     lines = text_box.get("1.0", END).strip().split("\n")
 
     try:
@@ -234,7 +240,7 @@ def save_after_delete():
             messagebox.showerror("Error", "Please enter a Student ID to delete.")
             return
 
-        students = read_student_data()
+        students = read_sd()
         updated_students = [s for s in students if s['code'] != delete_id]
 
         if len(updated_students) == len(students):
@@ -249,16 +255,18 @@ def save_after_delete():
                 file.write(f"{s['code']},{s['name']},{m1},{m2},{m3},{s['exam']}\n")
 
         messagebox.showinfo("Deleted", "Student deleted successfully!")
-        show_all_students()
+        display_all_sd()
 
     except Exception as e:
         messagebox.showerror("Error", f"Something went wrong.\n{e}")
+
+# To show data for editing in the existing data 
 
 def load_for_editing():
     text_box.config(state=NORMAL)  
     text_box.delete("1.0", END)
 
-    students = read_student_data() 
+    students = read_sd() 
 
     for s in students:
         
@@ -277,7 +285,9 @@ def load_for_editing():
 
     text_box.focus()  
 
-def save_edited_list():
+# To save the eddited data
+
+def update_edited_sd():
     content = text_box.get("1.0", END).strip().split("\n\n")  
     updated_students = []
 
@@ -320,22 +330,25 @@ def save_edited_list():
             f.write(f"{s['code']},{s['name']},{','.join(map(str,s['marks']))},{s['exam']}\n")
 
     messagebox.showinfo("Success", "Student data updated!")
-    show_all_students()  
+    display_all_sd()  
 
-def set_edit_mode():
+# To set edit mode
+
+def allow_edit_mode():
     global current_mode
     current_mode = "edit"
 
+# Save bottun to change all the changes sepratly
 
-def save_button_pressed():
+def save_button_sd():
     global current_mode
 
     if current_mode == "add":
-        save_new_student()
+        update_new_sd()
     elif current_mode == "delete":
-        save_after_delete()
+        update_after_delete()
     elif current_mode == "edit":
-        save_edited_list()
+        update_edited_sd()
     else:
         messagebox.showerror("Error", "No action selected (Add or Delete).")
 
@@ -420,7 +433,7 @@ img2b = img2b.resize((1005, 60))
 button_img2b = ImageTk.PhotoImage(img2b)
 
 button2b = Button(frame2, image=button_img2b, borderwidth=0,highlightthickness=0,
-                   command=lambda: [hide_search_entry(), show_all_students()])
+                   command=lambda: [hide_search(), display_all_sd()])
 button2b.place(x=140, y=260)
 
 # button 2c
@@ -430,7 +443,7 @@ img2c = img2c.resize((1005, 60))
 button_img2c = ImageTk.PhotoImage(img2c)
 
 button2c = Button(frame2, image=button_img2c, borderwidth=0,highlightthickness=0,
-                   command= prepare_search)
+                   command= ready_search)
 button2c.place(x=140, y=330)
 
 # button 2d
@@ -440,7 +453,7 @@ img2d = img2d.resize((1005, 60))
 button_img2d = ImageTk.PhotoImage(img2d)
 
 button2d = Button(frame2, image=button_img2d, borderwidth=0,highlightthickness=0,
-                   command=lambda: [hide_search_entry(), show_highest_student()])
+                   command=lambda: [hide_search(), display_highest_sd()])
 button2d.place(x=140, y=400)
 
 # button 2e
@@ -450,7 +463,7 @@ img2e = img2e.resize((1005, 60))
 button_img2e = ImageTk.PhotoImage(img2e)
 
 button2e = Button(frame2, image=button_img2e, borderwidth=0,highlightthickness=0,
-                   command=lambda: [hide_search_entry(), show_lowest_student()])
+                   command=lambda: [hide_search(), display_lowest_sd()])
 button2e.place(x=140, y=470)
 
 # -----------------------------------------------frame 3--------------------------------------------------------
@@ -491,7 +504,7 @@ text_box.insert(END, file_content)
 
 search_entry = Entry(frame3, font=("Arial", 16))
 search_entry.place(x=290, y=120, width=300, height=30)
-search_entry.bind("<Return>", lambda event: search_student_by_name())
+search_entry.bind("<Return>", lambda event: search_for_sd_by_name())
 search_entry.lower()  
 
 # button 3a
@@ -502,7 +515,7 @@ button_photo3a = ImageTk.PhotoImage(button_image3a)
 
 circle_button3a = Button(frame3, image=button_photo3a, borderwidth=0, highlightthickness=0,
                        bg=frame3["bg"], activebackground=frame3["bg"],
-                       command= sort_students_by_percentage)
+                       command= arrange_sd_by_percentage)
 circle_button3a.place(x=750, y=110)
 
 # button 3b
@@ -513,7 +526,7 @@ button_photo3b = ImageTk.PhotoImage(button_image3b)
 
 circle_button3b = Button(frame3, image=button_photo3b, borderwidth=0, highlightthickness=0,
                        bg=frame3["bg"], activebackground=frame3["bg"],
-                       command= enable_add_in_textbox)
+                       command= allow_add())
 circle_button3b.place(x=811, y=110)
 
 # button 3c
@@ -524,7 +537,7 @@ button_photo3c = ImageTk.PhotoImage(button_image3c)
 
 circle_button3c = Button(frame3, image=button_photo3c, borderwidth=0, highlightthickness=0,
                        bg=frame3["bg"], activebackground=frame3["bg"],
-                       command= enable_delete_mode )
+                       command= allow_delete )
 circle_button3c.place(x=873, y=110)
 
 # button 3d
@@ -535,7 +548,7 @@ button_photo3d = ImageTk.PhotoImage(button_image3d)
 
 circle_button3d = Button(frame3, image=button_photo3d, borderwidth=0, highlightthickness=0,
                        bg=frame3["bg"], activebackground=frame3["bg"],
-                       command=lambda: [set_edit_mode(), load_for_editing()])
+                       command=lambda: [allow_edit_mode(), load_for_editing()])
 circle_button3d.place(x=935, y=110)
 
 # button 3e
@@ -555,7 +568,7 @@ img3f = img3f.resize((230, 60))
 button_img3f = ImageTk.PhotoImage(img3f)
 
 button3f = Button(frame3, image=button_img3f, borderwidth=0,highlightthickness=0,
-                   command= save_button_pressed)
+                   command= save_button_sd)
 button3f.place(x=712, y=460)
 
 # button 3g
