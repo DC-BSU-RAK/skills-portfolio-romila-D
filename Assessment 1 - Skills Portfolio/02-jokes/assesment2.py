@@ -5,9 +5,9 @@ from PIL import ImageTk, Image
 import random
 import pygame
 
-#
 
-with open("Assessment 1 - Skills Portfolio/02-jokes/randomjokes.txt", "r", encoding="utf-8") as f:
+
+with open("skill-portfolio-romila-D/Assessment 1 - Skills Portfolio/02-jokes/randomjokes.txt", "r", encoding="utf-8") as f:
     jokes = [line.strip() for line in f.readlines() if "?" in line]
 
 current_setup = ""     
@@ -51,6 +51,7 @@ def end_game():
 # creating window
 
 root = Tk()
+root.iconphoto(False, PhotoImage(file="finalasset/assesment2/my_logo.png"))
 root.config(bg="#FFFFFF")
 root.title("Random Jokes By Romila Faheem")
 root.geometry('1900x1000')
