@@ -14,6 +14,7 @@ def switch_to_frame(frame):
 # creating window
 
 root = Tk()
+root.iconphoto(False, PhotoImage(file="finalasset/assesment1/my_logo.png"))
 root.config(bg="#FFFFFF")
 root.title("Math Quiz By Romila Faheem")
 root.geometry('1900x1000')
